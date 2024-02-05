@@ -1,0 +1,23 @@
+h1{
+    color: brown;
+    font-style: italic;
+}
+.fom form{
+    background-color: dodgerblue;
+    height: 350px;
+    width: 300px;
+    margin-left: 40%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+
+}
+table{
+    margin-top: -350px;
+}
+button{
+        font-size: 30px;
+}
+button:hover{
+    background-color: rebeccapurple;
+}

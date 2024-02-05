@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dashboard</title>
+</head>
+<body>
+<h1>Available matatus</h1>
+<!--<div th:if="${availableMatatu}" th:each="matatu : ${availableMatatu}">-->
+<!--    <p th:text="${matatu.id + ' - ' + matatu.arrivalTime + ' - ' + matatu.departureTime}"></p>-->
+<!--</div>-->
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Departure Time</th>
+        <th>Arrival Time</th>
+        <th>Departure Date</th>
+        <th>Number Of Seats Available</th>
+           </tr>
+    </thead>
+    <tbody>
+    <tr th:each="matatu : ${availableMatatu}">
+        <td th:text="${matatu.id}"></td>
+        <td th:text="${matatu.name}"></td>
+        <td th:text="${matatu.departureTime}"></td>
+        <td th:text="${matatu.arrivalTime}"></td>
+        <td th:text="${matatu.departureDate}"></td>
+        <td th:text="${matatu.numberOfSeatsAvailable}"></td>
+        <td>
+            <form action="/book" method="post">
+                <input type="hidden" name="numberOfSeatsAvailable" th:value="${matatu.numberOfSeatsAvailable}" />
+                <button type="submit">Book</button>
+            </form>
+        </td>
+            </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+   <link rel="stylesheet" th:href="@{/styles/adminLogin.css}">
+    <!-- Add any CSS stylesheets or links here -->
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        /* You can add more styles as needed */
+    </style>
+</head>
+<body>
+<h2>Login</h2>
+<form action="/processLogin" method="post">
+    <div th:if="${error}" style="color: red;">
+        <p th:text="${error}" style="color: red"></p>
+    </div>
+    <div>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required>
+    </div>
+    <div>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <div>
+        <button type="submit">Login</button>
+    </div>
+</form>
+<!-- Display error message if present -->
+</body>
+</html>
