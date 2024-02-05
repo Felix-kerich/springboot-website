@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Available Cars</title>
+</head>
+<body>
+<h1>Available cars</h1>
+<table>
+    <tr>
+        <th>id</th>
+        <th>Car Type</th>
+        <th>Number of seats</th>
+    </tr>
+    <tr th:each="v: ${vehicles}">
+        <td th:text="${v.id}"></td>
+        <td th:text="${v.carName}"></td>
+        <td th:text="${v.numberOfSits}"></td>
+
+    </tr>
+</table>
+</body>
+</html>
